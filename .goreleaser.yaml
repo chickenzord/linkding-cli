@@ -1,3 +1,5 @@
+version: 2
+
 before:
   hooks:
     - go mod tidy
@@ -36,11 +38,11 @@ archives:
       {{- if .Arm }}v{{ .Arm }}{{ end }}
     format_overrides:
       - goos: windows
-        format: zip
+        formats: [zip]
       - goos: linux
-        format: tar.gz
+        formats: [tar.gz]
       - goos: darwin
-        format: tar.gz
+        formats: [tar.gz]
     files:
       - README.md
       - LICENSE
@@ -108,26 +110,14 @@ release:
     **Full Changelog**: https://github.com/chickenzord/linkding-cli/compare/{{ .PreviousTag }}...{{ .Tag }}
 
 universal_binaries:
-  - replace: false
+  - ids: [linkding]
+    replace: false
 
-brews:
+homebrew_casks:
   - name: linkding-cli
     description: "CLI for any self-hosted linkding bookmark manager instance"
     homepage: https://github.com/chickenzord/linkding-cli
     directory: Formula
-    download_strategy: CurlDownloadStrategy
-    license: "MIT"
-    custom_block: |
-      head do
-        url "https://github.com/chickenzord/linkding-cli.git", branch: "main"
-        depends_on "go" => :build
-      end
-    install: |
-      if build.head?
-        system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/chickenzord/linkding-cli/internal/version.Version={{.Version}} -X github.com/chickenzord/linkding-cli/internal/version.GitCommit={{.FullCommit}} -X github.com/chickenzord/linkding-cli/internal/version.BuildDate={{.Date}}"), "./cmd/linkding"
-      else
-        bin.install "linkding"
-      end
     repository:
       owner: chickenzord
       name: homebrew-tap

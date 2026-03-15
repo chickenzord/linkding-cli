@@ -1,3 +1,21 @@
+---
+name: linkding-cli
+description: Use the linkding CLI to manage bookmarks and tags on a self-hosted linkding instance. Use when the user wants to list, search, create, update, delete, archive, or check bookmarks, or manage tags.
+metadata:
+  {
+    "author": "chickenzord",
+    "version": "1.0.0",
+    "openclaw":
+      {
+        "emoji": "🔖",
+        "homepage": "https://github.com/chickenzord/linkding-cli",
+        "keywords": ["linkding", "bookmarks", "tags", "self-hosted", "cli", "agent", "json"],
+        "requires": { "bins": ["linkding"] },
+        "install": ["go build -o linkding ./cmd/linkding"],
+      },
+  }
+---
+
 # linkding-cli Skill
 
 Use the `linkding` CLI to interact with the user's self-hosted linkding bookmark manager.

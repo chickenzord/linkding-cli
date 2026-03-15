@@ -11,7 +11,17 @@ metadata:
         "homepage": "https://github.com/chickenzord/linkding-cli",
         "keywords": ["linkding", "bookmarks", "tags", "self-hosted", "cli", "agent", "json"],
         "requires": { "bins": ["linkding"] },
-        "install": ["go build -o linkding ./cmd/linkding"],
+        "install":
+          [
+            {
+              "id": "brew-linkding",
+              "kind": "brew",
+              "tap": "chickenzord/tap",
+              "formula": "linkding",
+              "bins": ["linkding"],
+              "label": "Install linkding (brew)",
+            },
+          ],
       },
   }
 ---

@@ -14,12 +14,12 @@ metadata:
         "install":
           [
             {
-              "id": "brew-linkding",
+              "id": "brew-linkding-cli",
               "kind": "brew",
               "tap": "chickenzord/tap",
-              "formula": "linkding",
+              "formula": "linkding-cli",
               "bins": ["linkding"],
-              "label": "Install linkding (brew)",
+              "label": "Install linkding-cli (brew)",
             },
           ],
       },

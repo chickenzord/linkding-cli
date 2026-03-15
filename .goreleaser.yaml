@@ -92,7 +92,7 @@ release:
 
     **Homebrew (macOS/Linux):**
     ```bash
-    brew install chickenzord/tap/linkding
+    brew install chickenzord/tap/linkding-cli
     ```
 
     **Go Install:**
@@ -111,7 +111,8 @@ universal_binaries:
   - replace: false
 
 brews:
-  - description: "CLI for any self-hosted linkding bookmark manager instance"
+  - name: linkding-cli
+    description: "CLI for any self-hosted linkding bookmark manager instance"
     homepage: https://github.com/chickenzord/linkding-cli
     directory: Formula
     download_strategy: CurlDownloadStrategy

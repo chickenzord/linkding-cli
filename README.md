@@ -6,7 +6,7 @@ Command-line interface for any self-hosted [linkding](https://github.com/sissbru
 
 **Homebrew (macOS/Linux):**
 ```bash
-brew install chickenzord/tap/linkding
+brew install chickenzord/tap/linkding-cli
 ```
 
 **Go install:**
